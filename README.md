@@ -24,8 +24,95 @@ A divide-and-conquer algorithm recursively breaks down a problem into two or mor
 Steps to implement of quicksort algorithm
 * Find the pivot (lets pick it from the first or the last element of an array)
 * Now find the elements smaller than the pivot and the elements larger than the pivot.
-    This is called Partitioning, now we have
+    ### This is called Partitioning, now we have
     * A sub-array of all the numbers less than the pivot (not sorted yet)
     * The pivot
     * A sub-array of all the numbers greater than the pivot (not sorted yet)
+
+```js
+function quicksort(numbers){
+
+  //base case 1, empty array
+  if (numbers.length===0){
+    return numbers
+  }
+
+  //base case 2, array with one element
+  if (numbers.length===1){
+    return numbers
+  }
+
+  //base case 3, array with two element
+  if (numbers.length===3){
+    if (numbers[0]<numbers[1]){
+        numbers[0]=numbers[1];
+        numbers[1]=numbers[0];
+    }
+    return numbers
+
+  }
+
+  //recursive case
+  var pivot=numbers[0];
+  var left=[];
+  var right=[];
+
+  for(let x of numbers.slice(1)){
+    if (x<pivot){
+        left.push(x);
+    }
+    //left.push(pivot);
+    if (x>pivot){
+        right.push(x);
+    }
+  }
+  return quicksort(left).concat([pivot],quicksort(right));
+
+}
+```
+
+
+## More precise version
+
+```js
+function quicksort(numbers) {
+
+    if (numbers.length < 2) {
+        return numbers;
+
+    } else {
+        var pivot = numbers[0];
+        var left = numbers.slice(1).filter(function(x) {
+            return x <= pivot;
+        });
+        var right = numbers.slice(1).filter(function(x) {
+            return x > pivot;
+        });
+        return quicksort(left).concat([pivot], quicksort(right));
+    }
+}
+```
+
+## Golang version of quicksort
+
+```go
+
+func quicksort(numbers []int) []int {
+	if len(numbers) < 2 {
+		return numbers
+	} else {
+		pivot := numbers[0]
+		left := []int{}
+		right := []int{}
+		for _, i := range numbers[1:] {
+			if i <= pivot {
+				left = append(left, i)
+			} else {
+				right = append(right, i)
+			}
+		}
+		return append(append(quicksort(left), pivot), quicksort(right)...)
+	}
+}
+```
 
