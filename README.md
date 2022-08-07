@@ -9,6 +9,8 @@ The best way of doing this is by coding in practice.
 > In computer science, divide and conquer is an algorithm design paradigm.
 A divide and conquer algorithm is a strategy of solving a large problem by. breaking the problem into smaller sub-problems. solving the sub-problems, and. combining them to get the desired output.
 
+![d&c](https://miro.medium.com/max/1150/1*kPXTT7fBFyeFjEYA0RqwaQ.png)
+
 A divide-and-conquer algorithm recursively breaks down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly.
 
 ## Quicksort algorithm
