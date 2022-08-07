@@ -20,3 +20,12 @@ A divide-and-conquer algorithm recursively breaks down a problem into two or mor
 * Divide and conquer technique or strategy
 
 ![quicksort](https://cdn-images-1.medium.com/max/600/1*YBBPKTeYJs1eI_4hEhntIg.png)
+
+Steps to implement of quicksort algorithm
+* Find the pivot (lets pick it from the first or the last element of an array)
+* Now find the elements smaller than the pivot and the elements larger than the pivot.
+    This is called Partitioning, now we have
+    * A sub-array of all the numbers less than the pivot (not sorted yet)
+    * The pivot
+    * A sub-array of all the numbers greater than the pivot (not sorted yet)
+
