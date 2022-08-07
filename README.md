@@ -19,4 +19,4 @@ A divide-and-conquer algorithm recursively breaks down a problem into two or mor
 * Using recursion technique
 * Divide and conquer technique or strategy
 
-[quicksort](https://cdn-images-1.medium.com/max/600/1*YBBPKTeYJs1eI_4hEhntIg.png)
+![quicksort](https://cdn-images-1.medium.com/max/600/1*YBBPKTeYJs1eI_4hEhntIg.png)
